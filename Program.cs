@@ -18,8 +18,8 @@ Console.WriteLine("Hello, World!");
 using System.Security.Principal;
 
 string[] srcArray = new string[]{"Hello", "2", "world", ":-)"};
-//["1234", "1567", "-2", "computer science"]
-//["Russia", "Denmark", "Kazan"] 
+//string[] srcArray = new string[]{"1234", "1567", "-2", "computer science"};
+//string[] srcArray = new string[]{"Russia", "Denmark", "Kazan"};
 
 
 string [] selectArray(string[] wrkArray, int max){
