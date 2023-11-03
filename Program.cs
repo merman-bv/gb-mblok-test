@@ -22,11 +22,11 @@ string[] srcArray = new string[]{"Hello", "2", "world", ":-)"};
 //["Russia", "Denmark", "Kazan"] 
 
 
-string [] selectArray(string[] wrkArray){
+string [] selectArray(string[] wrkArray, int max){
     string[] resArray = Array.Empty<string>();
     foreach (string text in wrkArray)
     {
-        if (text.Length<=3)
+        if (text.Length<=max)
         {
             Array.Resize(ref resArray, resArray.Length+1);
             resArray[resArray.Length-1] = text;
@@ -43,4 +43,4 @@ void showArray(string[] wrkArray){
     }
 }
 
-showArray(selectArray(srcArray));
+showArray(selectArray(srcArray, 3));
