@@ -21,20 +21,26 @@ string[] srcArray = new string[]{"Hello", "2", "world", ":-)"};
 //["1234", "1567", "-2", "computer science"]
 //["Russia", "Denmark", "Kazan"] 
 
-Console.WriteLine("Формируем массив из строк, длина которых меньше, либо равна 3 символам.");
-string[] resultArray = Array.Empty<string>();
-foreach (string i in srcArray)
-{
-string text = "";
-    if (i.Length<=3)
+
+string [] selectArray(string[] wrkArray){
+    string[] resArray = Array.Empty<string>();
+    foreach (string text in wrkArray)
     {
-        text = i;//text = i.Substring(0, 3);
-        Array.Resize(ref resultArray, resultArray.Length+1);
-        resultArray[resultArray.Length-1] = text;
+        if (text.Length<=3)
+        {
+            Array.Resize(ref resArray, resArray.Length+1);
+            resArray[resArray.Length-1] = text;
+        }
     }
-    //Console.WriteLine(text);
+    return resArray;
 }
-foreach (string i in resultArray)
-{
-    Console.WriteLine(i);
+
+void showArray(string[] wrkArray){
+    Console.WriteLine("Формируем массив из строк, длина которых меньше, либо равна 3 символам.");
+    foreach (string i in wrkArray)
+    {
+        Console.WriteLine(i);
+    }
 }
+
+showArray(selectArray(srcArray));
